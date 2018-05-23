@@ -34,7 +34,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         json_params = {}
         if len(json_payload) > 0:
             try:
-                json_params = json.loads(json_payload.decode('utf-8')))
+                json_params = json.loads(json_payload.decode('utf-8'))
                 env.update(('REPOSITORY_' + var.upper(), str(val))
                             for var, val in json_params['repository'].items())
                 env.update(('PUSH_DATA_' + var.upper(), str(val))
